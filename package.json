@@ -1,0 +1,39 @@
+{
+  "name": "doctor-api",
+  "description": "",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "Luis Monsalve",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "start:dev": "SET NODE_ENV=development & nodemon src/server.js",
+    "start:prod": "SET NODE_ENV=production & nodemon src/server.js",
+    "db:migrate": "npx sequelize-cli db:migrate",
+    "db:migrate-fresh": "npx sequelize-cli db:migrate:undo:all && npm run db:migrate",
+    "db:seed": "npx sequelize-cli db:seed:all",
+    "db:drop": "npx sequelize-cli db:drop",
+    "db:reset": "npm run db:drop && npx sequelize-cli db:create && npm run db:migrate && npm run db:seed"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chalk": "^2.4.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "date-fns": "^2.28.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "express-async-handler": "^1.2.0",
+    "express-rate-limit": "^6.2.0",
+    "helmet": "^5.0.2",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.2",
+    "sequelize": "^6.15.1",
+    "winston": "^3.5.1",
+    "xss-clean": "^0.1.1"
+  }
+}
